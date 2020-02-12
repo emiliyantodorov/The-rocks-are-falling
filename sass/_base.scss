@@ -1,0 +1,65 @@
+/*BASE*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; // 10px
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  font-size: 1.7rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  letter-spacing: 0.5rem;
+  font-size: 6rem;
+  margin-bottom: 3rem;
+  text-shadow: 0.4rem 0.4rem 0.4rem black;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #444444;
+}
+
+/*ANIMATIONS*/
+@keyframes breathInBreathOut {
+  0% {
+    width: 4rem;
+  }
+
+  50% {
+    width: 5.5rem;
+  }
+
+  100% {
+    width: 4rem;
+  }
+}
+
+@keyframes shadowAnim {
+  0% {
+    box-shadow: 0 0 0.5rem 0.4rem;
+  }
+  50% {
+    box-shadow: 0 0 2rem 0.4rem;
+  }
+  100% {
+    box-shadow: 0 0 0.5rem 0.4rem;
+  }
+}

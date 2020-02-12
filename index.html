@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <!--    main css-->
+    <link rel="stylesheet" href="sass/style.css">
+    <!--    <link rel="stylesheet" href="bootstrap.css">-->
+
+    howlerJS
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.core.min.js"
+                integrity="sha256-KNY0IDDc9kAie/G8wTJ9BeGjBRqoPgadY2FQM0JmdYc=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="section-game-board">
+    <!--START GAME-->
+    <section class="section-start-game">
+        <div class="game-over">
+            <div>КАМЪНИТЕ ПАДНАА :(</div>
+
+            <button class="cta">
+                START NEW GAME
+            </button>
+        </div>
+
+        <div class="hero">
+            <h2></h2>
+            <button class="cta">
+                START GAME
+            </button>
+        </div>
+
+        <div class="lives-box">
+            <span class="lives-box__text">Lives</span>
+            <span class="lives-box__lives">3</span>
+        </div>
+
+        <div class="score-box">
+            <span class="score-box__text">Score: </span>
+            <span class="score-box__score">0</span>
+        </div>
+    </section>
+    <!--END OF START GAME-->
+
+    <section class="section-boss">
+        <div class="game-over-panel">
+            <button class="cta-boss">START BOSS FIGHT</button>
+            <h3 class="game-over-panel__game-over">REIM IS STRONGER THAN YOU!</h3>
+        </div>
+
+        <div class="boss-1">
+            <div class="boss-1__health-bar">
+                <div class="boss-1__health">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="boss-1__img-wrapper">
+                <img src="images/angry-rock.png" alt="angry rock"/>
+            </div>
+        </div>
+
+        <div class="tank">
+            <div class="tank__turret">
+                &nbsp; &nbsp;
+            </div>
+            <div class="tank__health-bar">
+                <div class="tank__health"></div>
+            </div>
+        </div>
+        <div class="mobile-stick mobile-stick--left">
+
+        </div>
+        <div class="mobile-stick mobile-stick--right">
+
+        </div>
+        <div class="mobile-stick mobile-stick--fire">
+            fire
+        </div>
+    </section>
+
+</div>
+
+
+
+<!--ALL SOUNDS-->
+<!--<audio src="sounds/tink.wav" class="tink"></audio>-->
+<audio class="tink">
+    <source src="sounds/tink.wav" type="audio/mpeg">
+</audio>
+<!--<audio class="tink2">-->
+<!--    <source src="sounds/kamani.mp3" type="audio/mpeg" >-->
+<!--</audio>-->
+<!--<iframe width="0" height="0" src="https://www.youtuberepeater.com/watch?v=JzKDTsadRq0&t=112s" frameborder="0" allowfullscreen></iframe>-->
+
+<!--SCRIPTS-->
+<!--<script src="jquery-3.3.1.js"></script>-->
+<!--<script src="popper.min.js"></script>-->
+<!--<script src="bootstrap.bundle.js"></script>-->
+
+<!--<script src="heroes.js"></script>-->
+
+<script src="js/index.js"></script>
+<!--<script src="js/on_mobile.js"></script>-->
+<script src="js/healthBar.js"></script>
+<script src="js/tank.js"></script>
+
+
+</body>
+</html>

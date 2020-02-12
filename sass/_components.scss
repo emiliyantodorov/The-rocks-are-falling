@@ -1,0 +1,185 @@
+/*COMPONENTS*/
+
+.section-game-board {
+  background-color: #0a6784;
+    width: 80%;
+  @include for-breakpoint("xl") {
+     width: 1200px;
+  }
+}
+
+.section-start-game {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.letter {
+  opacity: 0;
+  position: relative;
+  transition: all 0.8s;
+  top: -8rem;
+}
+
+// THE BOSS
+.boss-1 {
+  width: 10rem;
+  height: 9rem;
+  position: absolute;
+  z-index: 10000;
+  transition: all 1.3s;
+
+  @include for-breakpoint("md") {
+    width: 13rem;
+  }
+
+  @include for-breakpoint("lg") {
+    width: 15rem;
+  }
+  &__health-bar {
+    height: 1.3rem;
+    border: 1px solid #444444;
+    //margin-bottom: 1rem;
+  }
+
+  &__health {
+    height: 100%;
+    background-color: crimson;
+    width: 100%;
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    height: calc(100% - 1.3rem);
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.bg-video {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.game-over {
+  display: none;
+  font-size: 0;
+  text-align: center;
+  text-shadow: 0.4rem 0.4rem 0.4rem black;
+}
+
+.hero {
+  text-align: center;
+}
+
+.cta {
+  padding: 1.7rem 2.7rem;
+  border: 2px solid #444;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  -webkit-animation: shadowAnim 1s infinite;
+  -o-animation: shadowAnim 1s infinite;
+  animation: shadowAnim 1s infinite;
+}
+
+.cta-boss {
+  @extend .cta;
+}
+
+
+.score-box {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  z-index: 2000;
+  font-size: 4rem;
+}
+
+.rock {
+  display: inline-block;
+  z-index: 1;
+  width: 10rem;
+  height: 9.5rem;
+  position: absolute;
+  cursor: grabbing;
+  top: 0;
+  left: 0;
+}
+
+.lives-box {
+  position: absolute;
+  top: 0;
+  right: 25rem;
+  z-index: 2000;
+  font-size: 4rem;
+}
+
+.game-over-panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0a6784;
+  z-index: 11000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__game-over {
+    display: none;
+  }
+}
+
+////////////////////////
+// MOBILE
+.mobile-stick {
+  width: 6rem;
+  height: 6rem;
+  border: 2px solid brown;
+  border-radius: 50px;
+  background-color: darkorange;
+  position: absolute;
+  bottom: 5rem;
+  z-index: 12000;
+  
+  @include for-breakpoint("lg") {
+    display: none;
+  }
+  
+  &:active {
+    box-shadow: 1rem 1rem 1rem black;
+  }
+  
+  &.mobile-stick--left {
+    left: -5rem;
+  }
+
+  &.mobile-stick--right {
+    right: -5rem;
+  }
+
+  &.mobile-stick--fire {
+    display: flex;
+    right: -5rem;
+    bottom: 14rem;
+    justify-content: center;
+    align-items: center;
+    @include for-breakpoint("lg") {
+      display: none;
+    }
+  }
+}
+
+
+
+

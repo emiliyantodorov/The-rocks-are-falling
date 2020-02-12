@@ -1,0 +1,301 @@
+/*BASE*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  font-size: 1.7rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  letter-spacing: 0.5rem;
+  font-size: 6rem;
+  margin-bottom: 3rem;
+  text-shadow: 0.4rem 0.4rem 0.4rem black;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #444444;
+}
+
+/*ANIMATIONS*/
+@keyframes breathInBreathOut {
+  0% {
+    width: 4rem;
+  }
+  50% {
+    width: 5.5rem;
+  }
+  100% {
+    width: 4rem;
+  }
+}
+@keyframes shadowAnim {
+  0% {
+    box-shadow: 0 0 0.5rem 0.4rem;
+  }
+  50% {
+    box-shadow: 0 0 2rem 0.4rem;
+  }
+  100% {
+    box-shadow: 0 0 0.5rem 0.4rem;
+  }
+}
+/*COMPONENTS*/
+.section-game-board {
+  background-color: #0a6784;
+  width: 80%;
+}
+@media (min-width: 1200px) {
+  .section-game-board {
+    width: 1200px;
+  }
+}
+
+.section-start-game {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.letter {
+  opacity: 0;
+  position: relative;
+  transition: all 0.8s;
+  top: -8rem;
+}
+
+.boss-1 {
+  width: 10rem;
+  height: 9rem;
+  position: absolute;
+  z-index: 10000;
+  transition: all 1.3s;
+}
+@media (min-width: 768px) {
+  .boss-1 {
+    width: 13rem;
+  }
+}
+@media (min-width: 992px) {
+  .boss-1 {
+    width: 15rem;
+  }
+}
+.boss-1__health-bar {
+  height: 1.3rem;
+  border: 1px solid #444444;
+}
+.boss-1__health {
+  height: 100%;
+  background-color: crimson;
+  width: 100%;
+}
+.boss-1__img-wrapper {
+  width: 100%;
+  height: calc(100% - 1.3rem);
+}
+.boss-1__img-wrapper img {
+  width: 100%;
+}
+
+.bg-video {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.game-over {
+  display: none;
+  font-size: 0;
+  text-align: center;
+  text-shadow: 0.4rem 0.4rem 0.4rem black;
+}
+
+.hero {
+  text-align: center;
+}
+
+.cta, .cta-boss {
+  padding: 1.7rem 2.7rem;
+  border: 2px solid #444;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  -webkit-animation: shadowAnim 1s infinite;
+  -o-animation: shadowAnim 1s infinite;
+  animation: shadowAnim 1s infinite;
+}
+
+.score-box {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  z-index: 2000;
+  font-size: 4rem;
+}
+
+.rock {
+  display: inline-block;
+  z-index: 1;
+  width: 10rem;
+  height: 9.5rem;
+  position: absolute;
+  cursor: grabbing;
+  top: 0;
+  left: 0;
+}
+
+.lives-box {
+  position: absolute;
+  top: 0;
+  right: 25rem;
+  z-index: 2000;
+  font-size: 4rem;
+}
+
+.game-over-panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0a6784;
+  z-index: 11000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-over-panel__game-over {
+  display: none;
+}
+
+.mobile-stick {
+  width: 6rem;
+  height: 6rem;
+  border: 2px solid brown;
+  border-radius: 50px;
+  background-color: darkorange;
+  position: absolute;
+  bottom: 5rem;
+  z-index: 12000;
+}
+@media (min-width: 992px) {
+  .mobile-stick {
+    display: none;
+  }
+}
+.mobile-stick:active {
+  box-shadow: 1rem 1rem 1rem black;
+}
+.mobile-stick.mobile-stick--left {
+  left: -5rem;
+}
+.mobile-stick.mobile-stick--right {
+  right: -5rem;
+}
+.mobile-stick.mobile-stick--fire {
+  display: flex;
+  right: -5rem;
+  bottom: 14rem;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .mobile-stick.mobile-stick--fire {
+    display: none;
+  }
+}
+
+/*TANK STYLING*/
+.tank {
+  width: 5.5rem;
+  height: 4.5rem;
+  background-color: #444;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0.5rem;
+}
+@media (min-width: 992px) {
+  .tank {
+    width: 6rem;
+    height: 5rem;
+  }
+}
+.tank__turret {
+  width: 2rem;
+  height: 5rem;
+  background-color: cornflowerblue;
+  margin: 0 auto;
+  position: relative;
+  bottom: 2rem;
+  border-top-right-radius: 0.2rem;
+  border-top-left-radius: 0.2rem;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+@media (min-width: 992px) {
+  .tank__turret {
+    height: 5.5rem;
+  }
+}
+.tank__health-bar {
+  width: 5.5rem;
+  height: 1.3rem;
+  border: 1px solid black;
+}
+@media (min-width: 992px) {
+  .tank__health-bar {
+    width: 6rem;
+  }
+}
+.tank__health {
+  width: 100%;
+  height: 100%;
+  background-color: crimson;
+}
+
+.fireball {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 25px;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: all 1.2s ease-out;
+}
+
+.thunder {
+  width: 4rem;
+  height: 7rem;
+  position: absolute;
+  transition: all 1.2s ease-out;
+  animation: breathInBreathOut 0.5s infinite;
+}
+
+/*# sourceMappingURL=style.css.map */
